@@ -8,9 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        nunito: ['var(--nunito)', 'sans-serif'],
+        second: ['var(--rokkitt)', 'sans-serif'],
       },
     },
   },
