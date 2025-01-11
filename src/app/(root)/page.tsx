@@ -1,9 +1,20 @@
-import Image from "next/image";
+import Hero from "../components/Hero";
+import Search from "../components/Search";
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ query?: string }>;
+}) {
+
+  const query = (await searchParams).query
+
   return (
     <>
-    <h1 className="text-2xl">Home</h1>
+      <Hero/>
+      <div className="flex items-center justify-center mt-10 w-full px-4 sm:px-0">
+        <Search query={query}/>
+      </div>
     </>
   );
 }

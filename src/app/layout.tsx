@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning={true}
         className={`${NunitoFonte.variable} ${RokkittFonte.variable} antialiased`}
       >
         {children}

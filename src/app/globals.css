@@ -6,3 +6,15 @@
   --font-family-nunito: 'Nunito', sans-serif; 
   --font-family-rokkitt: "Rokkitt", serif;
 }
+
+@layer utilities {
+  .title {
+    @apply uppercase bg-black lg:px-6 px-4 py-3 rounded-sm font-second font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[30px] leading-[46px] max-w-5xl text-center my-5
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
