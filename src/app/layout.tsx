@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, Rokkitt } from "next/font/google";
 import "./globals.css";
+import 'easymde/dist/easymde.min.css'
 
 const NunitoFonte = Nunito({
   variable: "--nunito",
