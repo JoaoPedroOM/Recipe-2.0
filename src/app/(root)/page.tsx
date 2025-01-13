@@ -1,6 +1,8 @@
 import Hero from "../components/Hero";
-import RecipeCard from "../components/RecipeCard";
+import RecipeCard, { RecipeTypeCard } from "../components/RecipeCard";
 import Search from "../components/Search";
+import { RECIPES_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 export default async function Home({
   searchParams,
@@ -8,25 +10,9 @@ export default async function Home({
   searchParams: Promise<{ query?: string }>;
 }) {
   const query = (await searchParams).query;
+  const params = {search: query || null}
 
-  const posts = [
-    {
-      _createAt: new Date(),
-      views: 90,
-      author: {
-        _id: 1,
-        name: "João Pedro",
-        image:
-          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
-      },
-      _id: 1,
-      description: "Uma descrição legal",
-      image:
-        "https://img.freepik.com/fotos-gratis/alimentos-para-massas-gerados_23-2150664642.jpg?t=st=1736692489~exp=1736696089~hmac=1dbf693608dbb470ba79bcda9255aeb1176ad8d45596fcdbe9a4ceef4662a2ac&w=1380",
-      category: "Massas",
-      title: "Lasanha caseira",
-    },
-  ];
+  const {data: posts} = await sanityFetch({query: RECIPES_QUERY, params})
 
   return (
     <>
@@ -40,14 +26,18 @@ export default async function Home({
             ? `Resultados de pesquisa para "${query}"`
             : "Todas as receitas"}
         </p>
-        <ul className="mt-7 grid md:grid-cols-3 sm:grid-cols-2 gap-5 place-items-center">
+        <ul className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center">
           {posts?.length > 0 ? (
-            posts.map((post) => <RecipeCard key={post?._id} post={post} />)
+            posts.map((post: RecipeTypeCard) => (
+              <RecipeCard key={post?._id} post={post} />
+            ))
           ) : (
             <p className="text-normal text-sm">Nenhum post foi encontrado</p>
           )}
         </ul>
       </section>
+
+      <SanityLive/>
     </>
   );
 }

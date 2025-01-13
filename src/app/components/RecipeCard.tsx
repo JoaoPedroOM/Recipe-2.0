@@ -1,40 +1,26 @@
 import { formatDate } from "@/lib/utils";
+import { Recipe, Author } from "@/sanity/types";
 import { EyeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Author = {
-  _id: string;
-  name: string;
-  image: string;
-};
-
-type RecipeTypeCard = {
-  _id: string;
-  _createAt: string;
-  views: number;
-  author: Author;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-};
+export type RecipeTypeCard = Omit<Recipe, "author"> & {author?: Author} 
 
 const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
-  const { _createAt, views, author, title, category, _id, description, image } =
+  const { _createdAt, view, author, title, category, _id, description, image} =
     post;
 
   return (
-    <li className="w-80 transform rounded-lg bg-white p-4 shadow-md hover:shadow-orange-500/50">
+    <li className="w-80 transform rounded-lg bg-white py-4 px-5 shadow-md hover:shadow-orange-500/50">
 
       <div className="flex justify-between items-center font-second my-2">
         <p className="font-medium text-[14px] px-4 py-1 rounded-full bg-[#f7f7f7]">
-          {formatDate(_createAt)}
+          {formatDate(_createdAt)}
         </p>
         <div className="flex items-center gap-1.5">
           <EyeIcon className="size-4 text-primary" />
-          <span className="font-medium text-[14px] text-black">{views}</span>
+          <span className="font-medium text-[14px] text-black">{view || 0}</span>
         </div>
       </div>
 
@@ -48,14 +34,14 @@ const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
 
       <div className="flex justify-between items-center font-second mb-2 mt-4">
         <div className="flex-1">
-          <Link href={`/user/${author._id}`}>
-            <p className="font-medium text-[16px] text-black line-clamp-1 px-2 w-fit">{author.name}</p>
+          <Link href={`/user/${author?._id}`}>
+            <p className="font-medium text-[16px] text-black line-clamp-1 px-2 w-fit">{author?.name}</p>
           </Link>
         </div>
-        <Link href={`/user/${author._id}`}>
+        <Link href={`/user/${author?._id}`}>
           <Image
-            src={author.image}
-            alt={author.name}
+            src={author?.image || "https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg"}
+            alt={author?.name || "User"}
             width={30}
             height={30}
             className="rounded-full border"
@@ -65,13 +51,13 @@ const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
 
       <Link href={`/recipe/${_id}`}>
         <div className="p-2 font-nunito">
-          <h2 className="text-xl font-bold font-nunito">{title}</h2>
-          <p className="text-gray-600 font-nunito">{description}</p>
+          <h2 className="text-xl font-bold font-nunito line-clamp-1">{title}</h2>
+          <p className="text-gray-600 font-nunito line-clamp-3">{description}</p>
         </div>
       </Link>
 
       <div className="flex justify-between items-center gap-3 mt-2 font-second">
-        <Link href={`/?query=${category.toLowerCase()}`}>
+        <Link href={`/?query=${category?.toLowerCase()}`}>
           <p className="text-[14px] px-4 py-1 rounded-full bg-[#f7f7f7] font-bold">
             {category}
           </p>
