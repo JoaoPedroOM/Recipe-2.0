@@ -1,6 +1,6 @@
-import Hero from "../components/Hero";
-import RecipeCard, { RecipeTypeCard } from "../components/RecipeCard";
-import Search from "../components/Search";
+import Hero from "../../components/Hero";
+import RecipeCard, { RecipeTypeCard } from "../../components/RecipeCard";
+import Search from "../../components/Search";
 import { RECIPES_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 

@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
-import View from "@/app/components/View";
+import View from "../../../../components/View";
 
 const md = markdownit();
 
@@ -85,9 +85,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
         <hr className="border-dotted bg-zinc-400 max-w-4xl my-10 mx-auto" />
 
-        <Suspense fallback={<Skeleton className="bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3"/>}>
+        {/* <Suspense fallback={<Skeleton className="bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3"/>}>
           <View id={id}/>
-        </Suspense>
+        </Suspense> */}
       </section>
     </>
   );
