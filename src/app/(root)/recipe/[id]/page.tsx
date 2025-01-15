@@ -70,7 +70,6 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
               {post.category}
             </p>
           </div>
-
           {parsedContent ? (
             <article
               className="prose max-w-4xl font-nunito break-all"

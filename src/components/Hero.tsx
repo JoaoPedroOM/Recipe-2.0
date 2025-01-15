@@ -29,7 +29,7 @@ const Hero = () => {
         <h1 className="title">
           Descubra, compartilhe e saboreie novos pratos
         </h1>
-        <p className="font-medium font-second text-[20px] text-white max-w-3xl text-center break-words sm:px-0 px-4">
+        <p className="font-normal font-second text-[20px] text-white max-w-3xl text-center break-words sm:px-0 px-4">
           Encontre inspiração, compartilhe suas criações e conecte-se com
           amantes da boa cozinha!
         </p>

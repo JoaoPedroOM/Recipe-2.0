@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito, Rokkitt } from "next/font/google";
 import "./globals.css";
 import 'easymde/dist/easymde.min.css'
+import { Toaster } from "@/components/ui/toaster";
 
 const NunitoFonte = Nunito({
   variable: "--nunito",
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${NunitoFonte.variable} ${RokkittFonte.variable} antialiased`}
       >
         {children}
+        <Toaster/>
       </body>
     </html>
   );
