@@ -47,7 +47,7 @@ const Navbar = async () => {
 
                 <DropdownMenuContent>
                   <DropdownMenuLabel asChild>
-                    <Link href={`/user/${session.user?.id}`}>
+                    <Link href={`/user/${session.id}`}>
                       <span>Perfil</span>
                     </Link>
                   </DropdownMenuLabel>
