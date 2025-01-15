@@ -8,7 +8,7 @@ import React from "react";
 export type RecipeTypeCard = Omit<Recipe, "author"> & {author?: Author} 
 
 const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
-  const { _createdAt, view, author, title, category, _id, description, image} =
+  const { _createdAt, author, title, category, _id, description, image} =
     post;
 
   return (
@@ -18,10 +18,6 @@ const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
         <p className="font-medium text-[14px] px-4 py-1 rounded-full bg-[#f7f7f7]">
           {formatDate(_createdAt)}
         </p>
-        <div className="flex items-center gap-1.5">
-          <EyeIcon className="size-4 text-primary" />
-          <span className="font-medium text-[14px] text-black">{view || 0}</span>
-        </div>
       </div>
 
       <Link href={`/recipe/${_id}`}>
