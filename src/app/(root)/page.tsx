@@ -37,7 +37,7 @@ export default async function Home({
               <RecipeCard key={post?._id} post={post} />
             ))
           ) : (
-            <p className="text-normal text-sm">Nenhum post foi encontrado</p>
+            <p className="text-normal text-base font-nunito">Nenhum post foi encontrado 😔</p>
           )}
         </ul>
       </section>
