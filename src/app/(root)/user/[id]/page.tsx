@@ -5,12 +5,15 @@ import { AUTHOR_BY_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import UserRecipes from "@/components/UserRecipes";
+import { CardSkeleton } from "@/components/RecipeCard";
 
 export const experimental_ppr = true;
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
   const session = await auth();
+
+  const userId = session?.id || ""
 
   const user = await client.fetch(AUTHOR_BY_QUERY, { id });
 
@@ -58,8 +61,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             {session?.id === id ? "Suas" : "Todas"} Receitas
           </p>
           <ul className="grid sm:grid-cols-2 gap-5">
-            <Suspense fallback={<p>Carregando...</p>}>
-              <UserRecipes id={id} />
+            <Suspense fallback={<CardSkeleton/>}>
+              <UserRecipes id={id} userId={userId}/>
             </Suspense>
           </ul>
         </div>

@@ -57,3 +57,37 @@ export const createPitch = async (
     });
   }
 };
+
+export const deleteRecipe = async (recipeId: string) => {
+  const session = await auth();
+
+  if (!session)
+    return parseServerActionResponse({
+      error: "Not signed in",
+      status: "ERROR",
+    });
+
+  try {
+    if (!recipeId) {
+      return parseServerActionResponse({
+        error: "Recipe ID is required",
+        status: "ERROR",
+      });
+    }
+
+    const result = await writeClient.delete(recipeId);
+
+    return parseServerActionResponse({
+      ...result,
+      error: "",
+      status: "SUCCESS",
+    });
+  } catch (error) {
+    console.log(error);
+
+    return parseServerActionResponse({
+      error: JSON.stringify(error),
+      status: "ERROR",
+    });
+  }
+};

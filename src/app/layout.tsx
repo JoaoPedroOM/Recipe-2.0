@@ -17,8 +17,8 @@ const RokkittFonte = Rokkitt({
 })
 
 export const metadata: Metadata = {
-  title: "Recipe",
-  description: "Compartilhe suas receitas",
+  title: "Chef House",
+  description: "Chef House é a plataforma ideal para compartilhar suas receitas culinárias com uma comunidade apaixonada por gastronomia."
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         suppressHydrationWarning={true}
         className={`${NunitoFonte.variable} ${RokkittFonte.variable} antialiased`}

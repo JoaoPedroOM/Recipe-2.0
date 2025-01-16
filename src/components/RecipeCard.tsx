@@ -1,23 +1,63 @@
-import { formatDate } from "@/lib/utils";
+"use client"
+
+import { cn, formatDate } from "@/lib/utils";
 import { Recipe, Author } from "@/sanity/types";
-import { EyeIcon } from "lucide-react";
+import { TrashIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Skeleton } from "./ui/skeleton";
+import { deleteRecipe } from "@/lib/actions";
+import { useToast } from "@/hooks/use-toast";
 
-export type RecipeTypeCard = Omit<Recipe, "author"> & {author?: Author} 
+export type RecipeTypeCard = Omit<Recipe, "author"> & { author?: Author };
 
-const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
-  const { _createdAt, author, title, category, _id, description, image} =
-    post;
+const RecipeCard = ({ post, onDelete, userId }: { post: RecipeTypeCard, onDelete: (id: string) => void, userId: string }) => {
+  const { _createdAt, author, title, category, _id, description, image } = post;
+  const { toast } = useToast();
+  
+  const handleDeleteRecipe = async () => {
+    try {
+      const result = await deleteRecipe(_id);
+
+      if (result.status === "SUCCESS") {
+        toast({
+          title: "Sucesso",
+          description: "Receita excluída",
+        });
+
+        onDelete(_id)
+      } else {
+        toast({
+          title: "Falha",
+          description: result.error || "Não foi possível excluir a receita",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Erro",
+        description: "Ocorreu um erro inesperado",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <li className="w-80 transform rounded-lg bg-white py-4 px-5 shadow-md hover:shadow-orange-500/50">
-
       <div className="flex justify-between items-center font-second my-2">
         <p className="font-medium text-[14px] px-4 py-1 rounded-full bg-[#f7f7f7]">
           {formatDate(_createdAt)}
         </p>
+        {author?._id === userId && (
+          <button
+            className="text-red-500 hover:text-red-700"
+            onClick={handleDeleteRecipe} 
+          >
+            <TrashIcon className="size-5" />
+          </button>
+        )}
       </div>
 
       <Link href={`/recipe/${_id}`}>
@@ -65,6 +105,18 @@ const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
         </Link>
       </div>
     </li>
+  );
+};
+
+export const CardSkeleton = () => {
+  return (
+    <>
+      {[0, 1].map((index) => (
+        <li key={cn('skeleton', index)}>
+          <Skeleton className="w-full h-[380px] rounded-lg bg-zinc-400" />
+        </li>
+      ))}
+    </>
   );
 };
 
