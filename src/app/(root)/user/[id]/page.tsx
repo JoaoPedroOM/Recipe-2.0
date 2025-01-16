@@ -33,7 +33,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <>
-      <section className="w-full pb-10 lg:pt-20 pt-5 px-6 max-w-7xl mx-auto lg:flex-row flex-col flex gap-10 font-nunito">
+      <section className="w-full pb-10 lg:pt-20 pt-5 lg:px-6 px-[10px] max-w-7xl mx-auto lg:flex-row flex-col flex gap-10 font-nunito">
         
         <div className="lg:w-[400px] w-[300px] relative mt-4 h-[430px] group mx-auto bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col">
           <div className="w-full rounded-t-md h-[350px] group-hover:h-[410px] overflow-hidden transition-all duration-300">
@@ -60,7 +60,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           <p className="text-[30px] font-bold text-black">
             {session?.id === id ? "Suas" : "Todas"} Receitas
           </p>
-          <ul className="grid sm:grid-cols-2 gap-5">
+          <ul className="grid sm:grid-cols-2 gap-5 place-items-center">
             <Suspense fallback={<CardSkeleton/>}>
               <UserRecipes id={id} userId={userId}/>
             </Suspense>

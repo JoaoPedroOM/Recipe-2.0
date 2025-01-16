@@ -12,7 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export type RecipeTypeCard = Omit<Recipe, "author"> & { author?: Author };
 
-const RecipeCard = ({ post, onDelete, userId }: { post: RecipeTypeCard, onDelete: (id: string) => void, userId: string }) => {
+const RecipeCard = ({ post, onDelete, userId }: { post: RecipeTypeCard, onDelete?: (id: string) => void, userId?: string }) => {
   const { _createdAt, author, title, category, _id, description, image } = post;
   const { toast } = useToast();
   
@@ -26,7 +26,9 @@ const RecipeCard = ({ post, onDelete, userId }: { post: RecipeTypeCard, onDelete
           description: "Receita excluída",
         });
 
-        onDelete(_id)
+        if (onDelete) {
+          onDelete(_id);
+        }
       } else {
         toast({
           title: "Falha",
