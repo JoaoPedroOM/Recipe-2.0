@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/JoaoPedroOM">
-    <img src="https://i.ibb.co/0CrW2Qq/logo-png.png" alt="Chef House" width="200">
+    <img src="https://i.postimg.cc/CL6LQd2N/logo-png.png" alt="Chef House" width="200">
   </a>
   <br>
   Chef House
