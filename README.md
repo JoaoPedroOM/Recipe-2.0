@@ -12,8 +12,9 @@
   <a href="https://github.com/JoaoPedroOM/Recipe-2.0">
     <img src="https://img.shields.io/github/repo-size/JoaoPedroOM/Recipe-2.0"
   </a>
-  <a href="https://chef-house.vercel.app/"><img src="https://img.shields.io/website?url=https%3A%2F%2Fchef-house.vercel.app%2F
-  "></a>
+  <a href="https://chef-house.vercel.app/">
+    <img src="https://img.shields.io/website?url=https%3A%2F%2Fchef-house.vercel.app%2F">
+  </a>
   <a href="https://github.com/JoaoPedroOM/Recipe-2.0">
       <img src="https://img.shields.io/github/commit-activity/t/JoaoPedroOM/Recipe-2.0/main">
   </a>
