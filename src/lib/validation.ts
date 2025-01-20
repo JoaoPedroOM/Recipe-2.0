@@ -8,7 +8,7 @@ export const formSchema = z.object({
   
   description: z
     .string()
-    .min(5, { message: "A descrição deve ter no mínimo 5 caracteres." })
+    .min(90, { message: "A descrição deve ter no mínimo 5 caracteres." })
     .max(250, { message: "A descrição deve ter no máximo 250 caracteres." }),
 
   category: z

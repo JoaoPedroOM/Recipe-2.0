@@ -1,0 +1,132 @@
+[33mcommit 2a6ad31f41b5a6474c7865286ef3d7d9fcfc5b81[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: 1f17cbb 3fccd3f
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Mon Jan 20 08:24:15 2025 -0300
+
+    Merge branch 'main' of https://github.com/JoaoPedroOM/Recipe-2.0
+
+[33mcommit 1f17cbbc0e2a949a5d010f8a7ea35bba964027bd[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Mon Jan 20 08:23:53 2025 -0300
+
+    fix: desabilitado CDN para garantir dados em tempo real
+
+[33mcommit a08f7318be72e65c0476f811db4e655658ae8577[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Mon Jan 20 08:22:21 2025 -0300
+
+    fix: desabilitado CDN para garantir dados em tempo real
+
+[33mcommit 3fccd3f863ae99a255b7975fe9f0357c9ba216f5[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Fri Jan 17 11:00:46 2025 -0300
+
+    Update README.md
+
+[33mcommit 25e6d3b969964cd158cd1055e2d07b33f5c88232[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Fri Jan 17 10:59:43 2025 -0300
+
+    Update README.md
+
+[33mcommit 552b1269ac822d64aae29f07cef56e3300a25f97[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Fri Jan 17 10:58:14 2025 -0300
+
+    README atualizado com descrição do projeto, tecnologias, funcionalidades e aprendizados
+
+[33mcommit 1e9653e93154e2f1f97efb2eeee272cf5d6ebfee[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Thu Jan 16 16:07:33 2025 -0300
+
+    Ajustes finais para página de usuário e configurações para build
+
+[33mcommit ca6de2b3f84b08b3824e6872fd1c5cdeb22cee68[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Thu Jan 16 15:42:49 2025 -0300
+
+    feat: Adicionada opção de exclusão de receitas pelo autor
+
+[33mcommit 639e142464d3f4f92d023fb3b668a9fa0187e8a4[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Thu Jan 16 12:47:57 2025 -0300
+
+    fix: Ajustada a lógica de login com Google para garantir que o ID do usuário seja tratado corretamente e corrigida a manipulação das imagens do Google, com ajuste automático para maior qualidade
+
+[33mcommit 1f5ed9c667b137d108be1d60317db1170cc8258a[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Wed Jan 15 18:08:19 2025 -0300
+
+    feat: Criada página de perfil de usuário
+
+[33mcommit c66e9242688d8cb723de5f4d3b3c88c2f9cc184b[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Wed Jan 15 17:24:37 2025 -0300
+
+    feat: Criado footer
+
+[33mcommit 5f3f6ccec4000ade7c53740ebd4810f7dd8e1e2e[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Wed Jan 15 17:03:18 2025 -0300
+
+    feat: Adiciona validação aos campos do formulário e lógica para salvar receitas
+
+[33mcommit 8c4c84d3e7955d982bc329eb4b05122b4755c964[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Wed Jan 15 13:51:54 2025 -0300
+
+    feat: Criada estrutura para página de compartilhamento de receita
+
+[33mcommit 07c4c45f73924aa1b641c7611f15daf3ff7170cb[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Tue Jan 14 15:43:22 2025 -0300
+
+    feat: Implementado login com Google e ajustada navbar
+
+[33mcommit 905fe5783ce70a074c6de0a067120cd6ca0dc75a[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Mon Jan 13 17:11:10 2025 -0300
+
+    feat: Criada tela de details para postagens
+
+[33mcommit 9ae3efd97c1e070b40c93e73bb63838a80fa17e7[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Mon Jan 13 13:02:53 2025 -0300
+
+    feat: Implementado fetch dinâmico para recuperar todas as receitas, adicionado mecanismo de busca por título, categoria ou autor e configurada geração automática de tipos com base nos schemas
+
+[33mcommit 8f8f0adabe24e5cf8990f8fc8b1f27ae9a8df748[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Sun Jan 12 15:16:29 2025 -0300
+
+    feat: Instalação do Sanity e criação dos schematypes iniciais (Author e Recipe)
+
+[33mcommit a452af4ffbfe9444516ff93103ee1631706669a2[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Sun Jan 12 13:36:48 2025 -0300
+
+    feat: Criado componente de card para exibição das informações do post
+
+[33mcommit dc34b81ee68b5e5a9b0f3f182184b26d80990f89[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Sat Jan 11 14:58:22 2025 -0300
+
+    feat: Implementada barra de pesquisa de receitas e criado Hero para home
+
+[33mcommit e8272757d64b7078c047b469b4cb4eb76b4d5218[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Fri Jan 10 16:08:34 2025 -0300
+
+    feat: Cria estrutura para login com github utilizando Auth.js
+
+[33mcommit e0b49401425c91d685861660dc3c6cb269dbca58[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Fri Jan 10 15:05:48 2025 -0300
+
+    estrutura inicial
+
+[33mcommit 1d3eef71884691d72bf3dff501a748a7f1a63f80[m
+Author: João Pedro <63527881+JoaoPedroOM@users.noreply.github.com>
+Date:   Fri Jan 10 14:41:18 2025 -0300
+
+    Initial commit from Create Next App
